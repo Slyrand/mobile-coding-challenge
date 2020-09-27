@@ -12,6 +12,14 @@ dependencies {
     api "io.arrow-kt:arrow-syntax:${arrow_version}"
     api "io.arrow-kt:arrow-extras-data:${arrow_version}"
     api "io.arrow-kt:arrow-extras-extensions:${arrow_version}"
+
+    // KOIN
+    api "org.koin:koin-core:${koin_version}"
+    api "org.koin:koin-core-ext:${koin_version}"
+    api "org.koin:koin-android:${koin_version}"
+    api "org.koin:koin-android-scope:${koin_version}"
+    api "org.koin:koin-android-ext:${koin_version}"
+    api "org.koin:koin-java:${koin_version}"
 }
 
 sourceCompatibility = "1.7"
