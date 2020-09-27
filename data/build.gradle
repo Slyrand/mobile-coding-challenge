@@ -18,12 +18,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField 'String', 'API_URL', "\"https://my-json-server.typicode.com/Slyrand/mobile-coding-challenge/\""
+            buildConfigField 'String', 'API_URL', "\"https://my-json-server.typicode.com/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             debuggable true
-            buildConfigField 'String', 'API_URL', "\"https://my-json-server.typicode.com/Slyrand/mobile-coding-challenge/\""
+            buildConfigField 'String', 'API_URL', "\"https://my-json-server.typicode.com/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

@@ -7,7 +7,7 @@ import retrofit2.http.GET
 interface PostureService {
 
     companion object {
-        private const val GET_POSTURES = "/postures"
+        private const val GET_POSTURES = "Slyrand/mobile-coding-challenge/postures"
     }
 
     @GET(GET_POSTURES)
