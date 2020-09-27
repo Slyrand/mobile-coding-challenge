@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // ARROW
+    api "io.arrow-kt:arrow-core-data:${arrow_version}"
+    api "io.arrow-kt:arrow-core-extensions:${arrow_version}"
+    api "io.arrow-kt:arrow-typeclasses:${arrow_version}"
+    api "io.arrow-kt:arrow-syntax:${arrow_version}"
+    api "io.arrow-kt:arrow-extras-data:${arrow_version}"
+    api "io.arrow-kt:arrow-extras-extensions:${arrow_version}"
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
