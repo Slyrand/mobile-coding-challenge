@@ -21,6 +21,7 @@ class PosturesListPresenter(
 
     override fun attachView(view: View) {
         _view = view
+        _view.setUpUI()
 
         launchUI {
             await { posturesRepository.getPostures() }.fold(
