@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".postures.detail.PostureDetailActivity">
+
+    <ImageView
+        android:id="@+id/image_view_posture"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/bg_posture_picture" />
+
+    <TextView
+        android:id="@+id/text_view_posture_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_posture"
+        app:layout_constraintStart_toStartOf="@+id/image_view_posture"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_posture"
+        tools:text="Ullamco ut voluptate duis tempor aliqua labore nulla anim incididunt fugiat dolor proident occaecat. In adipisicing qui aliquip reprehenderit ut proident et ea officia do magna. Amet enim consequat quis nisi quis aliquip laboris ipsum non quis. Cupidatat ut laboris sunt fugiat sint.Duis ut veniam aute elit irure consequat labore duis pariatur tempor amet quis velit. Irure elit cupidatat esse eiusmod cillum excepteur mollit. Deserunt tempor consequat enim enim tempor commodo veniam deserunt quis aliquip quis incididunt reprehenderit. Officia laboris occaecat nisi non non deserunt excepteur." />
+</androidx.constraintlayout.widget.ConstraintLayout>
