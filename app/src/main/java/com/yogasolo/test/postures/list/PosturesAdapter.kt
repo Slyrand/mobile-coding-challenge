@@ -27,6 +27,11 @@ class PosturesAdapter(
 
     override fun getItemCount(): Int = items.size
 
+    fun clear() {
+        items.clear()
+        notifyDataSetChanged()
+    }
+
     fun addAll(newItems: List<Posture>) {
         val startingIndex = items.size
         items.addAll(newItems)

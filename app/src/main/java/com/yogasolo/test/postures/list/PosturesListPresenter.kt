@@ -15,6 +15,9 @@ class PosturesListPresenter(
 
     interface View : BasePresenter.View {
         fun addPostures(postures: List<Posture>)
+        fun showLoading()
+        fun hideLoading()
+        fun clearPostures()
     }
 
     private lateinit var _view: View
@@ -23,10 +26,23 @@ class PosturesListPresenter(
         _view = view
         _view.setUpUI()
 
+        requestPostures()
+    }
+
+    fun onReload() {
+        requestPostures()
+    }
+
+    private fun requestPostures() {
+        _view.clearPostures()
+        _view.showLoading()
         launchUI {
             await { posturesRepository.getPostures() }.fold(
-                { Log.d("PosturesListPresenter", "Error") },
                 {
+                    _view.hideLoading()
+                    Log.d("PosturesListPresenter", "Error") },
+                {
+                    _view.hideLoading()
                     _view.addPostures(it)
                 }
             )

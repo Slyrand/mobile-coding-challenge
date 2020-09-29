@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_posture_detail.*
 import org.koin.android.scope.currentScope
 import org.koin.core.parameter.parametersOf
 
-class PostureDetailActivity: ScopedActivity(), PostureDetailPresenter.View {
+class PostureDetailActivity : ScopedActivity(), PostureDetailPresenter.View {
 
     companion object {
         const val POSTURE_EXTRA = "posture"
@@ -37,6 +37,10 @@ class PostureDetailActivity: ScopedActivity(), PostureDetailPresenter.View {
     }
 
     override fun showPostureInfo(posture: Posture) {
+        text_view_posture_name.text = posture.name
+        text_view_posture_teacher.text = getString(R.string.by_name, posture.teacher)
+        text_view_duration.text = getString(R.string.duration_x, posture.duration)
+        text_view_posture_description.text = posture.description
         image_view_posture.loadWithRoundedCorners(posture.picture)
     }
 }

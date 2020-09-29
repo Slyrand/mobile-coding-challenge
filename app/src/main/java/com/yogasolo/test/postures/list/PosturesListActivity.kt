@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yogasolo.domain.postures.model.Posture
 import com.yogasolo.test.R
 import com.yogasolo.test.core.coroutines.ScopedActivity
+import com.yogasolo.test.core.extensions.invisible
+import com.yogasolo.test.core.extensions.visible
 import com.yogasolo.test.postures.detail.PostureDetailActivity
 import kotlinx.android.synthetic.main.activity_postures_list.*
 import org.koin.android.scope.currentScope
@@ -32,6 +34,23 @@ class PosturesListActivity : ScopedActivity(), PosturesListPresenter.View {
         })
         postures_recycler_view.adapter = _posturesAdapter
         postures_recycler_view.layoutManager = LinearLayoutManager(this)
+
+        pull_to_refresh.setOnRefreshListener {
+            pull_to_refresh.isRefreshing = false
+            _presenter.onReload()
+        }
+    }
+
+    override fun showLoading() {
+        loading_view?.visible()
+    }
+
+    override fun hideLoading() {
+        loading_view?.invisible()
+    }
+
+    override fun clearPostures() {
+        _posturesAdapter.clear()
     }
 
     override fun addPostures(postures: List<Posture>) {
